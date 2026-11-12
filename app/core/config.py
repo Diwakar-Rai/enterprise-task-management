@@ -1,0 +1,10 @@
+from pydantic_settings import BaseSettings, SettingsConfigDict 
+
+class Settings(BaseSettings):
+    APP_NAME: str = "Enterprise Task Management API"
+    ENVIRONMENT: str = "development"
+    DEBUG: bool = True 
+
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+
+settings = Settings()
